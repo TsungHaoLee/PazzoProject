@@ -1,0 +1,10 @@
+﻿################################################################################
+# 這個 .gitignore 檔案由 Microsoft(R) Visual Studio 自動建立。
+################################################################################
+
+/PazzoAPI/PazzoAPI/PazzoAPI.csproj.user
+/PazzoAPI/PazzoAPI.Tests/obj/Debug
+/PazzoAPI/PazzoAPI/obj/Debug
+/PazzoAPI/PazzoAPI/bin
+/PazzoAPI/packages
+/PazzoAPI/.vs

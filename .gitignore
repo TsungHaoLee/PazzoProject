@@ -9,3 +9,6 @@
 /PazzoAPI/packages
 /PazzoAPI/.vs
 /PazzoAPI/Pazzo.DB/obj/Debug
+/PazzoAPI/Pazzo.DB/bin/Debug
+/PazzoAPI/Pazzo.User/obj/Debug
+/PazzoAPI/Pazzo.User/bin/Debug

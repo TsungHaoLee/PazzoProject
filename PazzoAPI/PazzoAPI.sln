@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{801C5EA3-B4A5-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pazzo.DB", "Pazzo.DB\Pazzo.DB.csproj", "{765F5F41-86BF-42D4-A24E-0C635BEE21DD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{63A3C665-E6C9-46E4-9E29-B7BECCD24A05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pazzo.User", "Pazzo.User\Pazzo.User.csproj", "{97572DB1-C224-4177-84B4-2FA1B974D3F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +33,17 @@ Global
 		{765F5F41-86BF-42D4-A24E-0C635BEE21DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{765F5F41-86BF-42D4-A24E-0C635BEE21DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{765F5F41-86BF-42D4-A24E-0C635BEE21DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97572DB1-C224-4177-84B4-2FA1B974D3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97572DB1-C224-4177-84B4-2FA1B974D3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97572DB1-C224-4177-84B4-2FA1B974D3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97572DB1-C224-4177-84B4-2FA1B974D3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{765F5F41-86BF-42D4-A24E-0C635BEE21DD} = {801C5EA3-B4A5-4C1D-805D-9B70B4338111}
+		{97572DB1-C224-4177-84B4-2FA1B974D3F4} = {63A3C665-E6C9-46E4-9E29-B7BECCD24A05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D94B00E-137E-4891-94D4-EC7F1AAF4EF5}

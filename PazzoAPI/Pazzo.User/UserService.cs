@@ -1,7 +1,9 @@
 ﻿namespace Pazzo.User
 {
     using Newtonsoft.Json;
+    using Pazzo.DB;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
 
@@ -15,6 +17,15 @@
                 return db.User.Where(c => c.Id == userId).FirstOrDefault();
             }
         }
+
+        public List<User> GetUsers()
+        {
+            using (var db = new DB.PazzoDatabaseEntities())
+            {
+                return db.User.ToList();
+            }
+        }
+
         public bool UpdateUser(DB.User user)
         {
             Trace.Write("Start Update User");

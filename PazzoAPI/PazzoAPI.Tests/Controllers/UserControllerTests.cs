@@ -23,7 +23,7 @@ namespace PazzoAPI.Controllers.Tests
         }
 
         [TestMethod()]
-        public void UserTest()
+        public void GetUserByIdTest()
         {
             RestSharp.RestClient client = new RestSharp.RestClient("http://localhost:50235/api/user");
             RestSharp.RestRequest request = new RestSharp.RestRequest(RestSharp.Method.GET);
@@ -61,15 +61,20 @@ namespace PazzoAPI.Controllers.Tests
             request.AddJsonBody(updateUser);
             var responesUpdate = client.Execute<bool>(request);
             Assert.IsTrue(responesUpdate.Data);
+            client = new RestSharp.RestClient("http://localhost:50235/api/user");
+            request = new RestSharp.RestRequest(RestSharp.Method.GET);
+            users = new List<User>();
+            users = client.Execute<List<User>>(request).Data;
+            Assert.IsTrue(users.FirstOrDefault().Phone.Equals("2500"));
         }
 
         [TestMethod()]
         public void DeleteUserByIdTest()
         {
-            RestSharp.RestClient clinet = new RestSharp.RestClient("http://localhost:50235/api/user");
+            RestSharp.RestClient client = new RestSharp.RestClient("http://localhost:50235/api/user");
             RestSharp.RestRequest request = new RestSharp.RestRequest(RestSharp.Method.GET);
             List<User> users = new List<User>();
-            users = clinet.Execute<List<User>>(request).Data;
+            users = client.Execute<List<User>>(request).Data;
 
             User user = users.FirstOrDefault();
             if (user == null)
@@ -77,11 +82,17 @@ namespace PazzoAPI.Controllers.Tests
                 Assert.Fail();
             }
             var url = string.Format("http://localhost:50235/api/user/{0}", user.Id);
-            clinet = new RestSharp.RestClient(url);
+            client = new RestSharp.RestClient(url);
             request = new RestSharp.RestRequest(RestSharp.Method.DELETE);
             
-            var response = clinet.Execute<bool>(request);
+            var response = client.Execute<bool>(request);
             Assert.IsTrue(response.Data);
+            client = new RestSharp.RestClient("http://localhost:50235/api/user");
+            request = new RestSharp.RestRequest(RestSharp.Method.GET);
+            var oldUserCount = users.Count;
+            users = new List<User>();
+            users = client.Execute<List<User>>(request).Data;
+            Assert.IsTrue(users.Count == oldUserCount - 1);
         }
 
         [TestMethod()]

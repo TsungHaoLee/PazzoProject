@@ -55,6 +55,32 @@
                 return false;
             }
         }
+
+        public bool DeleteUsers()
+        {
+            Trace.Write("Start Delete Users");
+            try
+            {
+                using (var db = new DB.PazzoDatabaseEntities())
+                {
+                    var users = db.User.ToList();
+                    foreach (var user in users)
+                    {
+                        db.User.Remove(user);
+                    }
+                    db.SaveChanges();
+                    Trace.Write("End Delete Users");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                Trace.Write("End Delete Users");
+                return false;
+            }
+        }
+
         public bool CreateUser(DB.User user)
         {
             Trace.Write("Start Create User");
